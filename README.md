@@ -3,6 +3,8 @@
 iPadOS provides dynamic pointer effects and behaviors that enhance the experience of using a pointing device with iPad.
 This experimental library help you to achieve this amazing effect.
 
+[Design - Pointers (iPadOS)](https://developer.apple.com/design/human-interface-guidelines/ios/user-interaction/pointers/)
+
 [Demo Page](https://github.com/matozz)
 
 ## How to use
