@@ -19,6 +19,10 @@ h3 {
   margin-top: 40px;
 }
 
+p {
+  margin-bottom: 0;
+}
+
 #icon {
   height: 55px;
   width: 55px;
