@@ -1,5 +1,5 @@
 {
-  "name": "cursorjs",
+  "name": "@matoz/cursorjs",
   "version": "1.0.0",
   "description": "Interactive material cursor to use on webpage. ",
   "main": "./src/index.ts",
@@ -28,5 +28,7 @@
     "webpack-cli": "^4.9.1"
   },
   "author": "Matoz",
-  "license": "MIT"
+  "license": "MIT",
+  "unpkg": "dist/bundle.js",
+  "jsdelivr": "dist/bundle.js"
 }

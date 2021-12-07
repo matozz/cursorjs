@@ -13,7 +13,7 @@ const Cursor = {
     }
 
     // Inject default style
-    // document.body.insertAdjacentHTML('afterbegin', style);
+    document.body.insertAdjacentHTML('afterbegin', style);
 
     // Create cursor container
     cursor = createPortalElement('cursor');

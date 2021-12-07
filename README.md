@@ -1,11 +1,20 @@
 # Cursor.js
 
+<div style="display:flex;flex-wrap:wrap; gap:10px;margin:20px 0">
+    <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/matozz/cursorjs"/>
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/matozz/cursorjs"/>
+    <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/matozz/cursorjs"/>
+    <img alt="npm" src="https://img.shields.io/npm/v/@matoz/cursorjs"/>
+</div>
+
 iPadOS provides dynamic pointer effects and behaviors that enhance the experience of using a pointing device with iPad.
 This experimental library help you to achieve this amazing effect.
 
 [Design - Pointers (iPadOS)](https://developer.apple.com/design/human-interface-guidelines/ios/user-interaction/pointers/)
 
 [Demo Page](https://github.com/matozz)
+
+![](https://og-image.vercel.app/**Cursor**%20.js.png?theme=light&md=1&fontSize=100px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fvercel-triangle-black.svg&images=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fremojansen%2Flogo.ts%40master%2Fts.svg)
 
 ## How to use
 
@@ -14,7 +23,13 @@ This experimental library help you to achieve this amazing effect.
 - UNPKG CDN:
 
 ```html
-<script src="//unpkg.com/cursorjs" defer></script>
+<script src="//unpkg.com/@matoz/cursorjs" defer></script>
+```
+
+- jsDelivr CDN:
+
+```html
+<script src="//cdn.jsdelivr.net/npm/@matoz/cursorjs" defer></script>
 ```
 2. Follow the exmaples below.
 
@@ -56,6 +71,10 @@ This experimental library help you to achieve this amazing effect.
 
 ### More effects...
 
+## Contribute
+
+Feel free to fork this repository and submit pull requests. Bugs report in [GitHub Issues](https://github.com/matozz/cursorjs/issues).
+
 ## License
 
-Cursor.js is under [MIT](LICENSE) license.
+Cursor.js is [MIT Licensed](LICENSE).
