@@ -43,7 +43,7 @@ const handleCursorMove = () => {
     }
   });
 
-  document.addEventListener('mousemove', ({ x, y }) => {
+  document.addEventListener('mousemove', ({ pageX: x, pageY: y }) => {
     if (CursorLockedMode !== 'button') {
       cursor.style.setProperty('--top', y + 'px');
       cursor.style.setProperty('--left', x + 'px');
@@ -64,8 +64,14 @@ const handleButtonCursor = () => {
           rect = target.getBoundingClientRect();
 
           cursor.classList.add('is-locked', 'locked-mode__button');
-          cursor.style.setProperty('--top', rect.top + rect.height / 2 + 'px');
-          cursor.style.setProperty('--left', rect.left + rect.width / 2 + 'px');
+          cursor.style.setProperty(
+            '--top',
+            window.scrollY + rect.top + rect.height / 2 + 'px'
+          );
+          cursor.style.setProperty(
+            '--left',
+            window.scrollX + rect.left + rect.width / 2 + 'px'
+          );
           cursor.style.setProperty('--width', rect.width + 'px');
           cursor.style.setProperty('--height', rect.height + 'px');
 
@@ -80,7 +86,6 @@ const handleButtonCursor = () => {
       (e) => {
         const target = e.target as HTMLElement;
         if (target) {
-          console.log(target.nodeName);
           const halfHeight = rect.height / 2;
           const topOffset = (e.y - rect.top - halfHeight) / halfHeight;
           const halfWidth = rect.width / 2;
@@ -141,7 +146,7 @@ const handleSelectCursor = () => {
         const halfHeight = rect.height / 2;
         const topOffset = (e.y - rect.top - halfHeight) / halfHeight;
 
-        cursor.style.setProperty('--translateY', `${-topOffset * 5 - 2}px`);
+        cursor.style.setProperty('--translateY', `${-topOffset * 5 + 0.7}px`);
         cursor.style.setProperty('--width', '0.2em');
         cursor.style.setProperty('--height', '1.5em');
       },

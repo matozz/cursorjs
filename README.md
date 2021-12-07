@@ -41,7 +41,7 @@ This experimental library help you to achieve this amazing effect.
 <img class="icon" id="icon" src="./assets/Message.svg" alt="Message" />
 <img class="icon" id="icon" src="./assets/Phone.svg" alt="Phone" />
 ```
-> Simply add `id="icon"` to `img` tag 
+> Simply add `id="icon"` attribute to `<img>` tag 
 
 ### Content effect:
 ![Content](.github/Content.gif)
