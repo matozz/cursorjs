@@ -1,6 +1,6 @@
 {
   "name": "@matoz/cursorjs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Interactive material cursor to use on webpage. ",
   "main": "./src/index.ts",
   "scripts": {
