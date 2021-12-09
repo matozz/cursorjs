@@ -3,7 +3,7 @@
 <div style="display:flex;flex-wrap:wrap; gap:10px;margin:20px 0">
     <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/matozz/cursorjs"/>
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/matozz/cursorjs"/>
-    <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/matozz/cursorjs"/>
+    <img alt="GitHub code size in bytes" src="https://img.shields.io/github/size/matozz/cursorjs/dist/bundle.js"/>
     <img alt="npm" src="https://img.shields.io/npm/v/@matoz/cursorjs"/>
 </div>
 
@@ -12,7 +12,7 @@ This experimental library help you to achieve this amazing effect.
 
 [Design - Pointers (iPadOS)](https://developer.apple.com/design/human-interface-guidelines/ios/user-interaction/pointers/)
 
-[Demo Page](https://cursorjs.vercel.app)
+[Demo Page](https://cursorjs.vercel.app) (Download the [Source File](https://github.com/Matozz/cursorjs/blob/master/example.html))
 
 ![](https://og-image.vercel.app/**Cursor**.js.png?theme=light&md=1&fontSize=100px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fvercel-triangle-black.svg&images=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fremojansen%2Flogo.ts%40master%2Fts.svg)
 
