@@ -98,6 +98,7 @@ button:active {
   --scale: 1;
   --translateX: 0;
   --translateY: 0;
+  will-change: auto;
 }
 
 .cursor-js.is-locked {
@@ -107,10 +108,6 @@ button:active {
 
 .cursor-js.is-locked .cursor-js__content {
   opacity: 0.06;
-}
-
-.cursor-js.locked-mode__select {
-  will-change: auto
 }
 
 .cursor-js.locked-mode__icon {

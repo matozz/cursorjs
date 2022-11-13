@@ -142,7 +142,7 @@ const handleSelectCursor = () => {
     cursor.classList.remove('locked-mode__select');
   };
 
-  const selectorList = ['p', 'input'];
+  const selectorList = ['p', 'input[type="text"]'];
 
   document.querySelectorAll(selectorList.join(',')).forEach((p) => {
     p.addEventListener(
