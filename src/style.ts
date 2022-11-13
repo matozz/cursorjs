@@ -88,8 +88,8 @@ button:active {
   top: var(--top);
   -webkit-transform: translate(-50%, -50%) scale(var(--scale));
           transform: translate(-50%, -50%) scale(var(--scale));
-  -webkit-transition-property: width, height;
-  transition-property: width, height;
+  -webkit-transition-property: width, height, transform;
+  transition-property: width, height, transform;
   width: var(--width);
   --top: -1em;
   --left: -1em;
@@ -107,6 +107,10 @@ button:active {
 
 .cursor-js.is-locked .cursor-js__content {
   opacity: 0.06;
+}
+
+.cursor-js.locked-mode__select {
+  will-change: auto
 }
 
 .cursor-js.locked-mode__icon {

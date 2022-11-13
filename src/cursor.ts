@@ -4,6 +4,7 @@ import { style } from './style';
 let cursor: HTMLDivElement;
 let DEFAULT_CURSOR_SIZE: string;
 let CursorLockedMode: 'button' | 'select' | 'icon' | false = false;
+let CursorHolding = false;
 
 const Cursor = {
   start() {
@@ -27,7 +28,14 @@ const Cursor = {
     handleButtonCursor();
     handleSelectCursor();
     handleIconCursor();
-  },
+  }
+};
+
+const handleCursorReset = () => {
+  CursorLockedMode = false;
+  cursor.style.setProperty('--translateY', `0px`);
+  cursor.style.setProperty('--width', DEFAULT_CURSOR_SIZE);
+  cursor.style.setProperty('--height', DEFAULT_CURSOR_SIZE);
 };
 
 const handleCursorMove = () => {
@@ -126,11 +134,22 @@ const handleButtonCursor = () => {
 
 const handleSelectCursor = () => {
   let rect: DOMRect;
-  document.querySelectorAll('p').forEach((p) => {
+  let inRange = false;
+
+  const handleDeSelect = () => {
+    handleCursorReset();
+    cursor.style.setProperty('--scale', '1');
+    cursor.classList.remove('locked-mode__select');
+  };
+
+  const selectorList = ['p', 'input'];
+
+  document.querySelectorAll(selectorList.join(',')).forEach((p) => {
     p.addEventListener(
       'mouseenter',
       (e) => {
         CursorLockedMode = 'select';
+        inRange = true;
         const target = e.target as HTMLElement;
         cursor.classList.add('locked-mode__select');
         if (target) {
@@ -141,8 +160,25 @@ const handleSelectCursor = () => {
     );
 
     p.addEventListener(
-      'mousemove',
+      'mousedown',
       (e) => {
+        if (CursorLockedMode === 'select') {
+          CursorHolding = true;
+          cursor.style.setProperty('--scale', '0.8');
+        }
+      },
+      {
+        passive: true
+      }
+    );
+
+    p.addEventListener('mouseup', () => {
+      cursor.style.setProperty('--scale', '1');
+    });
+
+    p.addEventListener(
+      'mousemove',
+      (e: any) => {
         const halfHeight = rect.height / 2;
         const topOffset = (e.y - rect.top - halfHeight) / halfHeight;
 
@@ -156,14 +192,19 @@ const handleSelectCursor = () => {
     p.addEventListener(
       'mouseleave',
       () => {
-        CursorLockedMode = false;
-        cursor.classList.remove('locked-mode__select');
-        cursor.style.setProperty('--translateY', `0px`);
-        cursor.style.setProperty('--width', DEFAULT_CURSOR_SIZE);
-        cursor.style.setProperty('--height', DEFAULT_CURSOR_SIZE);
+        inRange = false;
+        if (CursorHolding) return;
+        handleDeSelect();
       },
       { passive: true }
     );
+
+    document.addEventListener('mouseup', () => {
+      if (CursorLockedMode === 'select') {
+        CursorHolding = false;
+        if (!inRange) handleDeSelect();
+      }
+    });
   });
 };
 
